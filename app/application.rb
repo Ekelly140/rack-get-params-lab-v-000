@@ -21,7 +21,7 @@ class Application
       end
     elsif req.path.match(/add/)
       binding.pry
-      search_term = req.params["q"]
+      item = req.params["item"]
       @@items.each do |items_item|
          if item = items_item
            @@cart << item
