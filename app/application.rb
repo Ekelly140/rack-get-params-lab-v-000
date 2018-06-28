@@ -25,8 +25,10 @@ class Application
       @@items.each do |items_item|
          if item == items_item
            @@cart << item
+           return
          end
       end
+      resp.write "Error"
 
     else
       resp.write "Path Not Found"
