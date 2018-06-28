@@ -25,13 +25,11 @@ class Application
       end
     elsif req.path.match(/add/)
       item = req.params["item"]
-      @@items.each do |items_item|
-         if item == items_item
-           @@cart << item
-           return
-         end
+      if @@items.include?(item)
+        @@cart << item
+      else
+        resp.write "Error"
       end
-      resp.write "Error"
 
     else
       resp.write "Path Not Found"
