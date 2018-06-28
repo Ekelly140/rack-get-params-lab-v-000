@@ -23,7 +23,7 @@ class Application
       binding.pry
       item = req.params["item"]
       @@items.each do |items_item|
-         if item = items_item
+         if item == items_item
            @@cart << item
          end
       end
