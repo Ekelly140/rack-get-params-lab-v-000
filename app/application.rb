@@ -20,7 +20,6 @@ class Application
         resp.write "#{item}\n"
       end
     elsif req.path.match(/add/)
-      binding.pry
       item = req.params["item"]
       @@items.each do |items_item|
          if item == items_item
