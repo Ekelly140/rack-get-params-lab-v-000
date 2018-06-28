@@ -1,3 +1,4 @@
+require 'pry'
 class Application
 
   @@items = ["Apples","Carrots","Pears"]
@@ -18,6 +19,15 @@ class Application
       @@cart.each do |item|
         resp.write "#{item}\n"
       end
+    elsif req.path.match(/add/)
+      binding.pry
+      search_term = req.params["q"]
+      @@items.each do |items_item|
+         if item = items_item
+           @@cart << item
+         end
+      end
+
     else
       resp.write "Path Not Found"
     end
